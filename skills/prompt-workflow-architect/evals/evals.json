@@ -1,0 +1,77 @@
+{
+  "skill_name": "prompt-workflow-architect",
+  "evals": [
+    {
+      "id": 0,
+      "eval_name": "direct-prompt-help-request",
+      "should_trigger": true,
+      "prompt": "Help me write a prompt for Claude Code to clean up the dead CSS in our design system.",
+      "expected_output": "Skill loads. Opens the interview with Step 1 only — asks for the outcome/end state, not the steps — and asks exactly one question, waiting for the answer before continuing. Does not draft a prompt yet. Over the session it works through scope (Step 2), verification (Step 3), guardrails (Step 4), and the existing-prompt check (Step 5) in order, then emits one markdown block following references/output-template.md with the final prompt written as prose (outcome + guardrails + verification), never as a numbered procedure.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "eval_name": "paraphrased-no-prompt-keyword",
+      "should_trigger": true,
+      "prompt": "How should I ask Claude to migrate our test suite from Jest to Vitest?",
+      "expected_output": "Skill loads even though the words 'prompt' and 'workflow' are never used. Begins with the Step 1 outcome question rather than answering with prompt text directly. One question per message.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "eval_name": "recurring-scheduled-task",
+      "should_trigger": true,
+      "prompt": "I want something that checks our dependency vulnerabilities every morning and tells me what changed.",
+      "expected_output": "Skill loads. After the Step 1 outcome question, Step 2 classifies this as recurring and Step 2b asks about locality (local vs cloud) and cadence. Given it needs no local machine state, recommends a routine and records the daily cadence. The output block explicitly notes this is a draft and that the skill does not create or schedule the routine — the user must set it up themselves.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "eval_name": "large-multi-stage-one-off",
+      "should_trigger": true,
+      "prompt": "Design an agentic workflow for auditing every API endpoint in our monorepo for missing auth checks.",
+      "expected_output": "Skill loads. Runs the interview rather than immediately proposing a workflow script. Step 2 classifies one-time, Step 2a classifies large/multi-stage, so it recommends a dynamic workflow and the invocation snippet appends 'Use a workflow.' per references/output-template.md.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "eval_name": "implicit-user-lists-steps",
+      "should_trigger": true,
+      "prompt": "Big job for Claude: first read all our Terraform, then find the unencrypted S3 buckets, then open a PR per bucket, then update the runbook.",
+      "expected_output": "Skill loads. Recognizes the request is shaped as a numbered procedure and pushes back at Step 1 — asks the user to restate the end state instead of the steps — and does not proceed to Step 2 until the answer is outcome-shaped. Does not silently translate the procedure into an outcome on the user's behalf.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "eval_name": "verification-gate-holds",
+      "should_trigger": true,
+      "prompt": "I want Claude to keep our changelog current. For verification, I'll just read it over and see if it looks right.",
+      "expected_output": "Skill loads and refuses to finalize on 'looks right'. Treats Step 3 as a hard gate: asks follow-ups (is there a test suite, a reference output to diff, a checklist) and helps sketch a concrete mechanism — for example comparing cited PR numbers against `gh pr list --state merged` — before moving to Step 4. No final output block is produced while verification is still undefined.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "eval_name": "unrelated-coding-task",
+      "should_trigger": false,
+      "prompt": "Write me a Python function that parses an ISO 8601 duration string into seconds.",
+      "expected_output": "Skill does not load. This is a direct, well-specified implementation request with no prompt-design or workflow-design intent — treat it as an ordinary coding task and just write the function.",
+      "files": []
+    },
+    {
+      "id": 7,
+      "eval_name": "unrelated-factual-question",
+      "should_trigger": false,
+      "prompt": "What's the difference between a git rebase and a git merge?",
+      "expected_output": "Skill does not load. A factual explanation request, not a request to design a prompt, workflow, or scheduled job. Answer it directly.",
+      "files": []
+    },
+    {
+      "id": 8,
+      "eval_name": "trivial-precise-one-liner",
+      "should_trigger": false,
+      "prompt": "Rename the variable `usr` to `user` in src/auth.ts.",
+      "expected_output": "Skill does not load. The task is already precise, single-shot, and trivial — running a five-step interview would be pure overhead. Make the edit.",
+      "files": []
+    }
+  ]
+}

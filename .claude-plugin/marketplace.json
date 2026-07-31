@@ -1,0 +1,26 @@
+{
+  "name": "prompt-workflow-architecture",
+  "owner": { "name": "Izzy Aly" },
+  "description": "Marketplace for the prompt-workflow-architect Claude Code skill — turns a rough task idea into a high-level prompt and picks the right execution mode.",
+  "plugins": [
+    {
+      "name": "promptmetrics-prompt-workflow",
+      "source": "./",
+      "description": "Interviews you to turn a rough task idea into a high-level Claude Code prompt (outcome + guardrails + a self-verification method, not a numbered procedure) and recommends the execution mode: single agent, dynamic workflow, loop, or routine.",
+      "version": "0.1.0",
+      "author": { "name": "Izzy Aly" },
+      "homepage": "https://github.com/promptmetrics/prompt-workflow-architecture",
+      "repository": "https://github.com/promptmetrics/prompt-workflow-architecture",
+      "license": "MIT",
+      "keywords": [
+        "prompt-engineering",
+        "workflow",
+        "agentic",
+        "automation",
+        "claude-code",
+        "routines"
+      ],
+      "skills": ["./skills/prompt-workflow-architect"]
+    }
+  ]
+}
