@@ -111,3 +111,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the description-length rules, how to 
 ## License
 
 MIT © Izzy Aly. See [LICENSE](LICENSE).
+
+---
+
+Built by [Izzy Aly](https://github.com/iiizzzyyy) at [PromptMetrics](https://github.com/promptmetrics).
