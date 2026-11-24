@@ -2,6 +2,8 @@
 
 > A Claude Code skill that interviews you before you write the prompt — so you end up with an outcome, guardrails, and a way for Claude to check its own work, instead of a numbered procedure that drifts.
 
+> **Moved:** this repo now lives at [pronovahq/prompt-workflow-architecture](https://github.com/pronovahq/prompt-workflow-architecture). Links and clones of the old `promptmetrics/prompt-workflow-architecture` address redirect.
+
 ## The problem it solves
 
 Two habits quietly waste most of the time people spend prompting.
@@ -21,7 +23,7 @@ Operators who run real automations and are tired of prompts that work once and t
 ### Claude Code — plugin marketplace (recommended)
 
 ```
-/plugin marketplace add promptmetrics/prompt-workflow-architecture
+/plugin marketplace add pronovahq/prompt-workflow-architecture
 /plugin install promptmetrics-prompt-workflow@prompt-workflow-architecture
 /reload-plugins
 ```
@@ -31,7 +33,7 @@ The slash command is `/promptmetrics-prompt-workflow:prompt-workflow-architect`.
 ### Claude Code — local clone
 
 ```
-git clone https://github.com/promptmetrics/prompt-workflow-architecture
+git clone https://github.com/pronovahq/prompt-workflow-architecture
 cd prompt-workflow-architecture
 claude --plugin-dir .
 ```
@@ -46,7 +48,7 @@ cp -r skills/prompt-workflow-architect ~/.claude/skills/
 
 Prerequisite: enable **Code execution and file creation** in **Settings ▸ Capabilities**.
 
-1. Download `prompt-workflow-architect.zip` from the [v0.1.0 release](https://github.com/promptmetrics/prompt-workflow-architecture/releases/tag/v0.1.0), or build it locally with `./scripts/build-zip.sh`.
+1. Download `prompt-workflow-architect.zip` from the [v0.1.0 release](https://github.com/pronovahq/prompt-workflow-architecture/releases/tag/v0.1.0), or build it locally with `./scripts/build-zip.sh`.
 2. Open **Customize ▸ Skills** → **+** → **+ Create skill** → **Upload a skill** → upload the zip.
 3. Enable it in **Settings ▸ Capabilities**.
 

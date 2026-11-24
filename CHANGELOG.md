@@ -4,6 +4,12 @@ All notable changes to this project are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- The repo moved from `promptmetrics/prompt-workflow-architecture` to `pronovahq/prompt-workflow-architecture` on 2026-11-24. Links, the install command and the manifest URLs point to the new address. The old address redirects. The plugin name `promptmetrics-prompt-workflow` is unchanged.
+
 ## [0.1.0] - 2026-07-31
 
 Initial public release.
@@ -24,4 +30,4 @@ Initial public release.
 
 - The skill `description` is 878 characters — under Anthropic's documented 1024-character limit, and kept long deliberately so its trigger phrases stay in the matcher. Some upload paths enforce a tighter ceiling, so the Claude Code plugin install is the verified route and `build-zip.sh` warns rather than fails above 200 characters.
 
-[0.1.0]: https://github.com/promptmetrics/prompt-workflow-architecture/releases/tag/v0.1.0
+[0.1.0]: https://github.com/pronovahq/prompt-workflow-architecture/releases/tag/v0.1.0
