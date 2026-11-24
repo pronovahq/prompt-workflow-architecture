@@ -3,8 +3,8 @@
   "name": "promptmetrics-prompt-workflow",
   "version": "0.1.0",
   "description": "Interviews you to turn a rough task idea into a high-level Claude Code prompt — outcome, guardrails, and a self-verification method instead of a numbered procedure — then routes it to the right execution mode: single agent, dynamic workflow, loop, or routine. Drafts only; never schedules anything for you.",
-  "homepage": "https://github.com/promptmetrics/prompt-workflow-architecture",
-  "repository": "https://github.com/promptmetrics/prompt-workflow-architecture",
+  "homepage": "https://github.com/pronovahq/prompt-workflow-architecture",
+  "repository": "https://github.com/pronovahq/prompt-workflow-architecture",
   "author": { "name": "Izzy Aly", "url": "https://github.com/promptmetrics" },
   "license": "MIT"
 }
